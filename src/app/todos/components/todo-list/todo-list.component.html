@@ -1,9 +1,23 @@
 <ul class="todo-list">
-  <li>
+  <li *ngFor="let todo of displayedTodos">
     <div class="view">
-      <input class="toggle" type="checkbox" />
-      <label></label>
-      <button class="destroy"></button>
+      <input
+        type="checkbox"
+        (click)="toggleComplete(todo.id)"
+        [className]="todo.completed ? 'toggle checked' : 'toggle'"
+      />
+      <label>
+        <input
+          class="todo-edit"
+          name="newTodo"
+          required
+          placeholder="What needs to be done"
+          autofocus
+          [(ngModel)]="todo.text"
+          (change)="change(todo.id, todo.text)"
+        />
+      </label>
+      <button class="destroy" (click)="remove(todo.id)"></button>
     </div>
   </li>
 </ul>

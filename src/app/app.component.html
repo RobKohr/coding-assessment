@@ -1,8 +1,20 @@
 <main class="todoapp">
   <header class="header">
     <h1>todos</h1>
-    <form enctype="application/x-www-form-urlencoded" role="form" novalidate>
-      <input class="new-todo" placeholder="What needs to be done" autofocus>
+    <form
+      enctype="application/x-www-form-urlencoded"
+      role="form"
+      (ngSubmit)="onSubmit()"
+      novalidate
+    >
+      <input
+        class="new-todo"
+        name="newTodo"
+        required
+        placeholder="What needs to be done"
+        autofocus
+        [(ngModel)]="newTodo"
+      />
     </form>
   </header>
   <section class="main">
@@ -10,19 +22,20 @@
     <app-todos-list></app-todos-list>
   </section>
   <footer class="footer">
-    <span class="todo-count"></span>
+    <span class="todo-count">{{ todoCount }}</span>
     <ul class="filters">
-      <li>
-        <a href="#" class="selected">All</a>
-      </li>
-      <li>
-        <a href="#">Active</a>
-      </li>
-      <li>
-        <a href="#" >Completed</a>
+      <li *ngFor="let fm of filterModes">
+        <a
+          href="#"
+          [className]="fm == filterMode ? 'selected' : ''"
+          (click)="setFilterMode(fm)"
+          >{{ fm }}</a
+        >
       </li>
     </ul>
-    <button class="clear-completed">Clear completed</button>
+    <button class="clear-completed" (click)="clearCompleted()">
+      Clear completed
+    </button>
   </footer>
 </main>
 <footer class="info">

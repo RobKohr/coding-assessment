@@ -1,4 +1,10 @@
-import { ChangeDetectorRef, ChangeDetectionStrategy, Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  OnDestroy,
+} from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { TodosService } from '@app/todos/services/todos.service';
@@ -6,19 +12,16 @@ import { TodosService } from '@app/todos/services/todos.service';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-complete-all',
-  styleUrls: [
-    './complete-all.component.scss',
-  ],
+  styleUrls: ['./complete-all.component.scss'],
   templateUrl: './complete-all.component.html',
 })
 export class CompleteAllComponent implements OnInit, OnDestroy {
-
   multipleTodosExist = false;
   subscription: Subscription;
 
-  constructor (
+  constructor(
     private changeDetectorRef: ChangeDetectorRef,
-    private todosService: TodosService,
+    private todosService: TodosService
   ) {}
 
   ngOnInit(): void {
@@ -37,5 +40,4 @@ export class CompleteAllComponent implements OnInit, OnDestroy {
   toggleCompleteAll(): void {
     this.todosService.toggleAllCompleted();
   }
-
 }
