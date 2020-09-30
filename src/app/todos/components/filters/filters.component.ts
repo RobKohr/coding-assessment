@@ -6,6 +6,7 @@ import { FILTER_MODES } from '../../constants/filter-modes';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-filters',
+  styleUrls: ['./filters.component.scss'],
   templateUrl: './filters.component.html',
 })
 export class FiltersComponent {

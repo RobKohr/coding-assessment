@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-new-todo',
+  styleUrls: ['./new-todo.component.scss'],
   templateUrl: './new-todo.component.html',
 })
 export class NewTodoComponent {
