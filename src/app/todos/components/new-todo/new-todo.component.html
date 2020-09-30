@@ -1,0 +1,15 @@
+<form
+  enctype="application/x-www-form-urlencoded"
+  role="form"
+  (ngSubmit)="onSubmit()"
+  novalidate
+>
+  <input
+    class="new-todo"
+    name="newTodo"
+    required
+    placeholder="What needs to be done"
+    autofocus
+    [(ngModel)]="newTodo"
+  />
+</form>

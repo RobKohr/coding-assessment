@@ -1,0 +1,10 @@
+<ul class="filters">
+  <li *ngFor="let fm of filterModes">
+    <a
+      href="#"
+      [className]="fm == filterMode ? 'selected' : ''"
+      (click)="setFilterMode(fm)"
+      >{{ fm }}</a
+    >
+  </li>
+</ul>

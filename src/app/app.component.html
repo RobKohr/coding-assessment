@@ -1,43 +1,20 @@
 <main class="todoapp">
   <header class="header">
     <h1>todos</h1>
-    <form
-      enctype="application/x-www-form-urlencoded"
-      role="form"
-      (ngSubmit)="onSubmit()"
-      novalidate
-    >
-      <input
-        class="new-todo"
-        name="newTodo"
-        required
-        placeholder="What needs to be done"
-        autofocus
-        [(ngModel)]="newTodo"
-      />
-    </form>
+    <app-new-todo></app-new-todo>
   </header>
   <section class="main">
     <app-complete-all></app-complete-all>
     <app-todos-list></app-todos-list>
   </section>
   <footer class="footer">
-    <span class="todo-count">{{ todoCount }}</span>
-    <ul class="filters">
-      <li *ngFor="let fm of filterModes">
-        <a
-          href="#"
-          [className]="fm == filterMode ? 'selected' : ''"
-          (click)="setFilterMode(fm)"
-          >{{ fm }}</a
-        >
-      </li>
-    </ul>
+    <span class="todo-count">Count: {{ todoCount }}</span>
+    <app-filters></app-filters>
     <button class="clear-completed" (click)="clearCompleted()">
       Clear completed
     </button>
   </footer>
 </main>
 <footer class="info">
-  <p>Double-click to edit a todo</p>
+  <p>Click on todo text to edit todo.</p>
 </footer>

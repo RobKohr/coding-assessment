@@ -27,6 +27,7 @@ export class CompleteAllComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.todosService.allTodos$.subscribe(todos => {
       this.multipleTodosExist = todos && todos.length > 1;
+      console.log('update', todos);
       this.changeDetectorRef.markForCheck();
     });
   }
