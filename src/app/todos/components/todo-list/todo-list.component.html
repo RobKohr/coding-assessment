@@ -9,9 +9,7 @@
       <label>
         <input
           class="todo-edit"
-          name="newTodo"
           required
-          placeholder="What needs to be done"
           autofocus
           [(ngModel)]="todo.text"
           (change)="change(todo.id, todo.text)"
