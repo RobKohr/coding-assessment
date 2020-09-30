@@ -7,6 +7,8 @@ This project is a fork of [Todo MVC](http://todomvc.com/)
 Your mission, should you choose to accept it, is to download this repo and make the app functionally equivalent to: [http://todomvc.com/examples/vanillajs/](http://todomvc.com/examples/vanillajs/).
 
 Please **do not fork this repo** as your code will not be accepted from a fork.
+--- Note: was instructed in email to fork the repo ~RobKohr
+
 
 The previous developer left the project half-finshed, but quite a bit of infrastructure is in place and we'd like to see how you would finish it out.
 
